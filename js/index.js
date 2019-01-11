@@ -14,7 +14,7 @@ function Cria_Index(json){
             data-name="${json["data"][element]["name"]}"
             data-tags="${json["data"][element]["tags"].reduce((i,j)=>i+'.'+j)}"
             data-json="${json["data"][element]["id"]}.json">
-            <div class="img" style='background-image:url("http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${json["data"][element]["id"]}_0.jpg")'></div>
+            <div class="img" style='background-image:url("https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${json["data"][element]["id"]}_0.jpg")'></div>
             <div class="all-text">
             <div class="Champion-Name"><h3>${json["data"][element]["name"]}</h3></div>
             <div class="card-hover">
@@ -30,13 +30,13 @@ function Cria_Index(json){
     const Champion_Divs = document.querySelectorAll(".champion")
     AllChampions = Array.from(Champion_Divs);
     AllChampions.map(i => i.addEventListener('click',function(event){
-        fetch(`http://ddragon.leagueoflegends.com/cdn/${version}/data/pt_BR/champion/${i.dataset.json}`)
+        fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/pt_BR/champion/${i.dataset.json}`)
         .then(res => res.json())
         .then(json => Cria_Champion(json, i.dataset.id))
     }))
 }
 function Champions_Res(json){
-    fetch(`http://ddragon.leagueoflegends.com/cdn/${json[0]}/data/pt_BR/champion.json`)
+    fetch(`https://ddragon.leagueoflegends.com/cdn/${json[0]}/data/pt_BR/champion.json`)
     .then(r => r.json())
     .then(json => Cria_Index(json))
 }
@@ -121,7 +121,7 @@ function Cria_Champion(json,id){
             <div class= "Img-Skill-Lore" >
             <div class="The-Champion">
             <div class="img-title">
-                <img src='http://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${json["data"][id]["image"]["full"]}' width="120px" height="120px">
+                <img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${json["data"][id]["image"]["full"]}' width="120px" height="120px">
                 <div class="title">
                 <h2>${json["data"][id]["name"]}</h1>
                 <span>${json["data"][id]["title"]}</span>
@@ -129,11 +129,11 @@ function Cria_Champion(json,id){
             </div>
             
                 <div class="Skills">
-                    <div class="Passive"><img src='http://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${json["data"][id]["passive"]["image"]["full"]}'></div>
-                    <div class="Champion-Q"><img src='http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[0]}'></div>
-                    <div class="Champion-W"><img src='http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[1]}'></div>
-                    <div class="Champion-E"><img src='http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[2]}'></div>
-                    <div class="Champion-R"><img src='http://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[3]}'></div>
+                    <div class="Passive"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${json["data"][id]["passive"]["image"]["full"]}'></div>
+                    <div class="Champion-Q"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[0]}'></div>
+                    <div class="Champion-W"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[1]}'></div>
+                    <div class="Champion-E"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[2]}'></div>
+                    <div class="Champion-R"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[3]}'></div>
                 </div>
             </div>
             <div class="Champion-Lore">
@@ -149,8 +149,8 @@ function Cria_Champion(json,id){
         </div>`
         const skins = document.querySelector('.Skins')
         json["data"][id]["skins"].map(i=> skins.insertAdjacentHTML("beforeend",`
-        <div class="Skin"><a href = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-lightbox="${json["data"][id]["id"]}" data-title="${i["name"]}">
-        <img src="http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg">
+        <div class="Skin"><a href = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-lightbox="${json["data"][id]["id"]}" data-title="${i["name"]}">
+        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg">
         </a>
         </div>`))
         
