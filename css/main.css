@@ -1,0 +1,204 @@
+.todo-header{
+    background:black;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+}
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
+textarea, input, select {
+    box-shadow: 1 0 1 0;
+    border: 0 none;
+    outline: 0;
+} 
+.todo-main{
+    width: 100%;
+    background-color:black;
+}
+.input_choose{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:black;
+}
+.input_choose div{
+    display:flex;
+    justify-content: flex-end;
+    width:10%;
+    margin-left:2%;
+    margin-bottom:5px;
+}
+.choose_champ{
+    color:white;
+    background:black;
+    top:0;
+    width:100%;
+    height: 60px;
+}
+.choose_champ:focus{
+    background:black;
+}
+.input-filtros{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.champions{
+    display:grid;
+}
+.champion{
+    display: flex;
+    justify-content: center;
+    color:white;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.champion .img{
+    width:80px;
+    height: 160px;
+    background-size:80px 160px;
+    transition:all 0.5s ease-out;
+}
+.champion .all-text{
+    display: flex;
+    width:100%;
+}
+.champion .card-hover{
+    display:flex;
+    justify-content: flex-end;
+    bottom:0;
+    right: 0;
+    overflow: hidden;
+    width:100%;
+    margin-right: 5%;
+    align-items:center;
+}
+.champion .card-hover .text i{
+    font-size: 40px;
+}
+.Champion-Name{
+    margin-left:5%;
+}
+@media (min-width:640px){
+    .input-filtros{
+        display: flex;
+        justify-content: space-around;
+    }
+    .input-filtros label:hover{
+        cursor:pointer
+    }
+    .champions{
+        grid-template-columns: repeat(3,1fr);
+        justify-items:center;
+        padding-top:5%;
+        grid-row-gap: 20px;
+        position: relative;
+    }
+    .champion{
+        position: relative;
+        width:200px;
+        height:400px;
+        transition: all 0.3s ease-in-out;
+        text-align: center;
+        
+    }
+    .champion:hover{
+        border:1px solid gold;
+        cursor:pointer
+    }
+    .champion .img{
+        background-size: 200px 400px;
+        width:100%;
+        height: 100%;
+    }
+    .champion:hover .img{
+        background-size: 220px 440px;
+    }
+    .champion .all-text{
+        background-color: black;
+        position: absolute;
+        display:flex;
+        align-self: flex-end;
+        width:100%;
+        height:10%;
+        align-content: flex-end;
+        transition: all 0.5s;
+    }
+    .champion:hover .all-text{
+        height: 20%;
+    }
+    .Champion-Name{
+        position: absolute;
+        justify-content: flex-end;
+        width:100%;
+        height: 50%;
+        top:0;
+        right:0;
+        left:0;
+        margin-left:0;
+        margin-right: 0;
+        border-top:1px solid gold;
+    }
+
+    .champion .card-hover{
+        position: absolute;
+        align-self: flex-end;
+        height:50%;
+        overflow:hidden;
+        bottom:0;
+        right:0;
+        left:0;
+        height: 0;
+        transition:all 0.5s ease-out;
+        margin-left:0;
+        margin-right: 0;
+        border-top:1px solid gold;
+        justify-content: center;
+    }
+    .champion:hover .card-hover{
+        height: 50%;
+    }
+
+}
+@media (min-width:900px){
+    .champions{
+        grid-template-columns: repeat(4,1fr);
+    }
+}
+@media (min-width:1200px){
+    .champions{
+        grid-template-columns: repeat(5,1fr);
+    }
+}
+input {
+    padding:12px;
+  }
+  
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 20px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-size: 20px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    font-size: 20px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    font-size: 20px;
+  }
+  
+  input:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-size: 20px;
+  }
+  
+  input:focus::-moz-placeholder { /* Firefox 19+ */
+    font-size: 20px;
+  }
+  input:focus:-ms-input-placeholder { /* IE 10+ */
+    font-size: 20px;
+  }
+  input:focus:-moz-placeholder { /* Firefox 18- */
+    font-size: 20px;
+  }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="node_modules/lightbox2/dist/css/lightbox.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='css/main.css'>
+    <link rel='stylesheet' href='css/champion.css'>
+</head>
+<body>
+    <header class="todo-header">
+        <a href="index.html" style="display:block;"><img src='imgs/lc3.png' width="200px" height="200px"></a>
+    </header>
+    <main class="todo-main">
+            <div class="input_choose" style='border-top:0.5px solid gray; border-bottom:0.5px solid gray;padding-bottom:2px;padding-left:40px;'>
+                    <div><img src="http://ddragon.leagueoflegends.com/cdn/5.5.1/img/ui/champion.png" height="22px" width="21px"></div>
+                    <input class="choose_champ" type="text" placeholder="Procure um campeão" style="padding-left: 30px;">
+                </div>
+                <div class="input-filtros" style="background-color:black;color:white;padding-top:10px;">
+                        <div class ="filtro">
+                            <input type="checkbox" name="tags" value="Assassin" id="Assassin">
+                            <label for="Assassin">Assassino</label>
+                        </div>
+                        <div class ="filtro">  
+                            <input type="checkbox" name="tags" value="Fighter" id="Fighter">
+                            <label for="Fighter">Lutador</label>
+                        </div>
+                        <div class ="filtro">  
+                            <input type="checkbox" name="tags" value="Mage" id="Mage">
+                            <label for="Mage">Mago</label>
+                        </div>
+                        <div class ="filtro">
+                            <input type="checkbox" name="tags" value="Support" id="Support">
+                            <label for="Support">Suporte</label>
+                        </div>
+                        <div class ="filtro">
+                            <input type="checkbox" name="tags" value="Tank" id="Tank">
+                            <label for="Tank">Tanque</label>
+                        </div>
+                        <div class ="filtro">
+                            <input type="checkbox" name="tags" value="Marksman" id="Marksman">
+                            <label for="Marksman">Atirador</label>
+                        </div>
+                        </div>
+                </div>
+        <div class="champions"></div>
+    </main>
+    <footer class="todo-footer">
+
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="node_modules/lightbox2/dist/js/lightbox-plus-jquery.min.js"></script>
+    <script src='js/index.js'></script>
+    <script src='js/champion.js'></script>
+</body>
+</html>

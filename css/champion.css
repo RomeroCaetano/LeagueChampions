@@ -1,0 +1,114 @@
+.Individual_Champion{
+    background-color: white;
+    display:flex;
+    align-self: center;
+    position: relative;
+    width:100%;
+    flex-direction: column;
+}
+.Buttons{
+    display:flex;
+    justify-content: flex-start;
+    width: 100%;
+    position:absolute;
+}
+.Button_Lore, .Button_Skins, .Button_Build{
+    background-color:#8ABEF3;
+    display:flex;
+    align-content: center;
+    justify-content: center;
+    position: relative;
+    top: -20px;
+    width:70px;
+    height:70px;
+    margin-left: 3%;
+    border-radius: 10%;
+}
+.Button_Lore i,.Button_Skins i,.Button_Build i{
+    display: flex;
+    align-self: center;
+    font-size: 60px;
+    color:white;
+}
+.The-Champion{
+    display: flex;
+    width:100%;
+    margin-top:80px;
+    align-items: center;
+    flex-direction: column;
+}
+.img-title{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.title{
+    text-align: center;
+}
+.Champion-Lore{
+    padding:20px;
+}
+.Skills{
+    display:flex;
+    flex-direction: row;
+    margin-top:20px;
+}
+.Skills img{
+    width:50px;
+    height:50px;
+    margin:3px;
+}
+.Text-Skin{
+    background: black url(https://lolstatic-a.akamaihd.net/lolkit/1.1.6/resources/images/lol-textures.jpg) no-repeat 0 -6px;
+}
+.Text-Skin h1{
+    color:white;
+    padding-left:30px;
+}
+.Skins{
+    display:grid;
+    text-align: center;
+}
+.Skin{
+    
+    width:260px;
+    height:153px;
+}
+.Skin img{
+    padding:10px;
+    width:260px;
+    height:153px;
+}
+@media (min-width:700px){
+    .Individual_Champion{
+        padding:10px;
+    }
+    .Img-Skill-Lore{
+        display: flex;
+        flex-direction: row
+    }
+    .Champion-Lore{
+        margin-top:60px;
+        padding: 20px;
+    }
+    .img-title{
+        display: flex;
+        flex-direction:row;
+    }
+    .title{
+        display:flex;
+        padding:5px;
+        flex-direction: column;
+    }
+    .Skins{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+@media (min-width:1000px){
+    .Individual_Champion{
+        width:1000px;
+    }
+    .Skins{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
