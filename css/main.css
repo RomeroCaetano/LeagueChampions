@@ -1,8 +1,33 @@
+.body:nth-child{
+    scroll-behavior: smooth;
+}
 .todo-header{
     background:black;
     height: 200px;
     display: flex;
     justify-content: center;
+}
+.nav-top {
+	background-color: #383838;
+	color: #fff;
+	position: fixed;
+	bottom: 2rem;
+	right: 2rem;
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    transition: opacity .5s;
+}
+.nav-top .fa-chevron-up {
+	width: 2rem;
+	height: 2rem;
+	fill: #fff;
+}
+.nav-top:hover{
+    background-color:#696969;
+    cursor: pointer
 }
 textarea:focus, input:focus, select:focus {
     box-shadow: 0 0 0 0;
@@ -44,6 +69,7 @@ textarea, input, select {
 .input-filtros{
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    justify-items: center;
 }
 .champions{
     display:grid;
@@ -64,6 +90,9 @@ textarea, input, select {
 .champion .all-text{
     display: flex;
     width:100%;
+}
+.champion .all-text h3{
+    font-size: 1.50rem;
 }
 .champion .card-hover{
     display:flex;

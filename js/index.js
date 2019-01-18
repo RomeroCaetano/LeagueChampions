@@ -3,6 +3,7 @@ const main = document.querySelector(".todo-main")
 const choose = document.querySelector(".choose_champ")
 const inputs_tags = Array.from(document.querySelectorAll('input[name=tags]'))
 const inputs_range = Array.from(document.querySelectorAll('input[name=range]'))
+const nav_top = document.querySelector('.nav-top')
 let AllChampions
 let version
 // Criando Main do Index
@@ -77,7 +78,25 @@ function inputs_checked(checkeds){
     
 }
 //
-//Filtro Range
+//nav-top
+document.addEventListener('scroll', function(event){
+    if(window.scrollY > window.innerHeight/3){
+        nav_top.style.opacity = '1'
+        nav_top.style.right = '2rem'
+    }
+    else{
+        nav_top.style.opacity = '0'
+        nav_top.style.right = '-10rem'
+    }
+})
+nav_top.addEventListener('click', function(event){
+    event.preventDefault()
+    window.scrollTo({
+        behavior:'smooth',
+        top: 0,
+        left: 0
+      })
+})
 
 // Formulario de busca no index
 choose.addEventListener('keyup',function(event){
@@ -109,15 +128,6 @@ function Cria_Champion(json,id){
         main.setAttribute('style','padding:20px;display:flex;justify-content:center')
         main.innerHTML = `
         <div class="Individual_Champion">
-            <div class= "Buttons">
-                    <div class="Button_Lore">
-                        <i class="material-icons">
-                        assignment
-                        </i>
-                    </div>
-                    <div class="Button_Skins"></div>
-                    <div class="Button_Build"></div>
-            </div>
             <div class= "Img-Skill-Lore" >
             <div class="The-Champion">
             <div class="img-title">
