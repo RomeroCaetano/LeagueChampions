@@ -138,11 +138,11 @@ function Cria_Champion(json,id){
             </div>
             
                 <div class="Skills">
-                    <div class="Passive"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${json["data"][id]["passive"]["image"]["full"]}'  data-toggle='tooltip' data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["passive"]["name"]}</h5><span>${json["data"][id]["passive"]["description"]}</span></div>'></div>
-                    <div class="Champion-Q"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[0]}' data-toggle='tooltip' data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][0]["description"]}</span></div>'></div>
-                    <div class="Champion-W"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[1]}' data-toggle='tooltip' data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][1]["description"]}</span></div>'></div>
-                    <div class="Champion-E"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[2]}' data-toggle='tooltip' data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][2]["description"]}</span></div>'></div>
-                    <div class="Champion-R"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[3]}' data-toggle='tooltip' data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][3]["description"]}</span></div>'></div>
+                    <div class="Passive"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/passive/${json["data"][id]["passive"]["image"]["full"]}'  data-toggle='tooltip' data-placement="bottom" data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["passive"]["name"]}</h5><span>${json["data"][id]["passive"]["description"]}</span></div>'></div>
+                    <div class="Champion-Q"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[0]}' data-toggle='tooltip' data-placement="bottom" data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][0]["description"]}</span></div>'></div>
+                    <div class="Champion-W"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[1]}' data-toggle='tooltip' data-placement="bottom" data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][1]["description"]}</span></div>'></div>
+                    <div class="Champion-E"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[2]}' data-toggle='tooltip' data-placement="bottom" data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][2]["description"]}</span></div>'></div>
+                    <div class="Champion-R"><img src='https://ddragon.leagueoflegends.com/cdn/${version}/img/spell/${Array_Habilities[3]}' data-toggle='tooltip' data-placement="bottom" data-html='true' title='<div style="display:flex;flex-direction:column"><h5>${json["data"][id]["spells"][0]["name"]}</h5><span>${json["data"][id]["spells"][3]["description"]}</span></div>'></div>
                 </div>
             </div>
             <div class="Champion-Lore">
@@ -158,8 +158,8 @@ function Cria_Champion(json,id){
         </div>`
         const skins = document.querySelector('.Skins')
         json["data"][id]["skins"].map(i=> skins.insertAdjacentHTML("beforeend",`
-        <div class="Skin"><a href = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-lightbox="${json["data"][id]["id"]}" data-title="${i["name"]}">
-        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-toggle="tooltip" title="${i["name"]}">
+        <div class="Skin"><a href = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-lightbox="${json["data"][id]["id"]}" data-title="${(i["name"] != 'default')? i["name"] : json["data"][id]["name"]}">
+        <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-toggle="tooltip" title="${(i["name"] != 'default')? i["name"] : json["data"][id]["name"]}">
         </a>
         </div>`))
         $(document).ready(function(){
