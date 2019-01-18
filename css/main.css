@@ -1,6 +1,3 @@
-.body:nth-child{
-    scroll-behavior: smooth;
-}
 .todo-header{
     background:black;
     height: 200px;
