@@ -82,6 +82,7 @@ textarea, input, select {
     width:80px;
     height: 160px;
     background-size:80px 160px;
+    background-position: center;
     transition:all 0.5s ease-out;
 }
 .champion .all-text{
