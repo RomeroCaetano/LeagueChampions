@@ -3,12 +3,14 @@ import * as lightbox from 'lightbox2'
 const choose = document.querySelector(".choose_champ")
 const inputs_tags = Array.from(document.querySelectorAll('input[name=tags]'))
 const nav_top = document.querySelector('.nav-top')
-
-// Criando Main do Index
+let version
+// Requisita Versão Atual da API
 
 fetch('https://ddragon.leagueoflegends.com/api/versions.json')
 .then(r => r.json())
-.then(json => Champions_Res(json))
+.then(json => {version = json[1];
+    Champions_Res(version);})
+// Criando Main do Index
 //
 //Filtro tags
 inputs_tags.map(i=>
@@ -46,6 +48,4 @@ choose.addEventListener('keyup',function(event){
 
 //
 // Champions
-fetch('https://ddragon.leagueoflegends.com/api/versions.json')
-.then(r => r.json())
-.then(json => version = json[0])
+export {version}

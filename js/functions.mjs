@@ -1,8 +1,9 @@
-import version from './index.mjs'
+import{version} from './index.mjs'
 const champions = document.querySelector(".champions")
 const main = document.querySelector(".todo-main")
 const inputs_range = Array.from(document.querySelectorAll('input[name=range]'))
 let AllChampions
+
 function Cria_Index(json){
     for(let element in json["data"]){
         const div = `
@@ -33,7 +34,7 @@ function Cria_Index(json){
     }))
 }
 function Champions_Res(json){
-    fetch(`https://ddragon.leagueoflegends.com/cdn/${json[0]}/data/pt_BR/champion.json`)
+    fetch(`https://ddragon.leagueoflegends.com/cdn/${json}/data/pt_BR/champion.json`)
     .then(r => r.json())
     .then(json => Cria_Index(json))
 }
@@ -102,7 +103,7 @@ function Cria_Champion(json,id){
         </div>
         <div class="Champion-Lore">
         <h1>História</h1>
-            <span>${json["data"][id]["lore"]}<span>
+            <span>${json["data"][id]["lore"]}</span>
         </div>
         </div>
         <div class="Text-Skin">
