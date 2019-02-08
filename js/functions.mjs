@@ -81,6 +81,8 @@ function Champion_Filter(letra){
 function Cria_Champion(json,id){
     const Array_Habilities = json["data"][id]["spells"].map(i=>i["image"]["full"])
     main.setAttribute('style','padding:20px;display:flex;justify-content:center')
+    const items_SR = json["data"][id]["recommended"].filter(i=>i["mode"]=="CLASSIC" & i["map"] == "SR")[0]["blocks"]
+    console.log(items_SR)
     main.innerHTML = `
     <div class="Individual_Champion">
         <div class= "Img-Skill-Lore" >
@@ -111,13 +113,60 @@ function Cria_Champion(json,id){
         </div>
         <div class="Skins">
         </div>
-    </div>`
+        <div class="Text-Skin">
+        <h1>Dicas</h1>
+    </div>
+        <div class="All_Tips">
+            <div class="Play_Tips">
+            <div class="Ally_Tips"><h3>Jogando Com</h3><span>${json["data"][id]["allytips"]}</span></div>
+            <div class="Enemy_Tips"><h3>Jogando Contra</h3><span>${json["data"][id]["enemytips"]}</span></div>
+            </div>
+            <br>
+            <div class="Recommended_Builds">
+            <h2>Items Recomendados</h2>
+            <h4>Items Iniciais</h4>
+            <div class="Items_Recomended"></div>
+            <h4>Items Essênciais</h4>
+            <div class="Items_Essenciais"></div>
+            <h4>Items Situacionais</h4>
+            <div class="Items_Situacionais"></div>
+        </div>
+    </div>
+        `
     const skins = document.querySelector('.Skins')
     json["data"][id]["skins"].map(i=> skins.insertAdjacentHTML("beforeend",`
     <div class="Skin"><a href = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-lightbox="${json["data"][id]["id"]}" data-title="${(i["name"] != 'default')? i["name"] : json["data"][id]["name"]}">
     <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-toggle="tooltip" title="${(i["name"] != 'default')? i["name"] : json["data"][id]["name"]}">
     </a>
     </div>`))
+    const Recomendado_Inicial = document.querySelector(".Items_Recomended")
+    const Recomendado_Essencial = document.querySelector(".Items_Essenciais")
+    const Recomendado_Situacionais = document.querySelector(".Items_Situacionais")
+    let items_add
+    items_add = items_SR.filter(i=>i["type"] == "starting")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "essential")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "offensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "defensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
+    items_add =items_SR.filter(i=>i["type"] == "situational")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "standard")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip(); 
       });
