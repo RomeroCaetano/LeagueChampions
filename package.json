@@ -1,0 +1,29 @@
+{
+  "name": "LeagueChampions",
+  "version": "1.0.0",
+  "description": "Site que contem informações sobre os campeões do jogo League of Legends",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "jquery": "^3.3.1",
+    "lightbox2": "^2.10.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomeroCaetano/LeagueChampions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomeroCaetano/LeagueChampions/issues"
+  },
+  "homepage": "https://github.com/RomeroCaetano/LeagueChampions#readme"
+}
