@@ -4,14 +4,13 @@ const choose = document.querySelector(".choose_champ")
 const inputs_tags = Array.from(document.querySelectorAll('input[name=tags]'))
 const nav_top = document.querySelector('.nav-top')
 let version
-// Requisita Versão Atual da API
 
+// Requisita Versão Atual da API E Cria o Index
 fetch('https://ddragon.leagueoflegends.com/api/versions.json')
 .then(r => r.json())
 .then(json => {version = json[1];
     Champions_Res(version);})
-// Criando Main do Index
-//
+    
 //Filtro tags
 inputs_tags.map(i=>
     i.addEventListener('click',function(event){
