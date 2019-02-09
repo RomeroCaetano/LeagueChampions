@@ -167,6 +167,14 @@ function Cria_Champion(json,id){
     if(items_add != null){
         items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
     }
+    items_add = items_SR.filter(i=>i["type"] == "protective")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "agressive")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+    }
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip(); 
       });
