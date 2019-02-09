@@ -3,6 +3,7 @@ const champions = document.querySelector(".champions")
 const main = document.querySelector(".todo-main")
 const inputs_range = Array.from(document.querySelectorAll('input[name=range]'))
 let AllChampions
+let items_SR
 
 function Cria_Index(json){
     for(let element in json["data"]){
@@ -33,11 +34,13 @@ function Cria_Index(json){
         .then(json => Cria_Champion(json, i.dataset.id))
     }))
 }
+
 function Champions_Res(json){
     fetch(`https://ddragon.leagueoflegends.com/cdn/${json}/data/pt_BR/champion.json`)
     .then(r => r.json())
     .then(json => Cria_Index(json))
 }
+
 function inputs_checked(checkeds){
     checkeds_test = checkeds
     AllChampions.map(i=>{ 
@@ -63,12 +66,14 @@ function inputs_checked(checkeds){
     )
     
 }
+
 function Filtro_Letras(letras_Test,AllString){
     let new_String = AllString.slice(0,letras_Test.length)
     if (letras_Test == new_String){
         return true
     }
 }
+
 function Champion_Filter(letra){
     AllChampions.forEach(i =>{
         if (Filtro_Letras(letra,i.dataset.name.toLowerCase())){
@@ -78,10 +83,11 @@ function Champion_Filter(letra){
         }
     })
 }
+
 function Cria_Champion(json,id){
     const Array_Habilities = json["data"][id]["spells"].map(i=>i["image"]["full"])
     main.setAttribute('style','padding:20px;display:flex;justify-content:center')
-    const items_SR = json["data"][id]["recommended"].filter(i=>i["mode"]=="CLASSIC" & i["map"] == "SR")[0]["blocks"]
+    items_SR = json["data"][id]["recommended"].filter(i=>i["mode"]=="CLASSIC" & i["map"] == "SR")[0]["blocks"]
     console.log(items_SR)
     main.innerHTML = `
     <div class="Individual_Champion">
@@ -139,45 +145,51 @@ function Cria_Champion(json,id){
     <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-toggle="tooltip" title="${(i["name"] != 'default')? i["name"] : json["data"][id]["name"]}">
     </a>
     </div>`))
+    fetch(`http://ddragon.leagueoflegends.com/cdn/${version}/data/pt_BR/item.json`)
+    .then(res => res.json())
+    .then(json_Items => InserItems(json_Items))
+
+    
+}
+function InserItems(json_Items){
     const Recomendado_Inicial = document.querySelector(".Items_Recomended")
     const Recomendado_Essencial = document.querySelector(".Items_Essenciais")
     const Recomendado_Situacionais = document.querySelector(".Items_Situacionais")
     let items_add
     items_add = items_SR.filter(i=>i["type"] == "starting")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "essential")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "offensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "defensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add =items_SR.filter(i=>i["type"] == "situational")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "standard")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "protective")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "agressive")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="bottom" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip(); 
       });
-    
 }
 export {Cria_Index, Champions_Res, inputs_checked, Filtro_Letras, Champion_Filter,Cria_Champion}
