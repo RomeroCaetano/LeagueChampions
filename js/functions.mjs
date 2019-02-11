@@ -145,7 +145,7 @@ function Cria_Champion(json,id){
     <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${json["data"][id]["id"]}_${i["num"]}.jpg" data-toggle="tooltip" title="${(i["name"] != 'default')? i["name"] : json["data"][id]["name"]}">
     </a>
     </div>`))
-    fetch(`http://ddragon.leagueoflegends.com/cdn/${version}/data/pt_BR/item.json`)
+    fetch(`https://ddragon.leagueoflegends.com/cdn/${version}/data/pt_BR/item.json`)
     .then(res => res.json())
     .then(json_Items => InserItems(json_Items))
 
@@ -158,35 +158,35 @@ function InserItems(json_Items){
     let items_add
     items_add = items_SR.filter(i=>i["type"] == "starting")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "essential")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "offensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "defensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add =items_SR.filter(i=>i["type"] == "situational")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "standard")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "protective")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "agressive")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="http://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
     }
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip(); 
