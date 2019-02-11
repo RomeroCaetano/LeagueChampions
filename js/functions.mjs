@@ -150,7 +150,7 @@ function Cria_Champion(json,id){
     .then(json_Items => InserItems(json_Items))
 
     
-}
+};
 function InserItems(json_Items){
     const Recomendado_Inicial = document.querySelector(".Items_Recomended")
     const Recomendado_Essencial = document.querySelector(".Items_Essenciais")
