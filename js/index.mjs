@@ -8,7 +8,7 @@ let version
 // Requisita Versão Atual da API E Cria o Index
 fetch('https://ddragon.leagueoflegends.com/api/versions.json')
 .then(r => r.json())
-.then(json => {version = json[1];
+.then(json => {version = json[0];
     Champions_Res(version);})
     
 //Filtro tags
