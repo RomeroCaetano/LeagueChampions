@@ -1,5 +1,13 @@
+import $ from 'jquery';
+window.jQuery = $;
+window.$ = $;
+import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'lightbox2/dist/css/lightbox.min.css'
+import 'lightbox2/dist/js/lightbox'
+import '../css/main.css'
+import '../css/champion.css'
 import {Cria_Index, Champions_Res, inputs_checked, Filtro_Letras, Champion_Filter,Cria_Champion} from './functions.mjs'
-import * as lightbox from 'lightbox2'
 const choose = document.querySelector(".choose_champ")
 const inputs_tags = Array.from(document.querySelectorAll('input[name=tags]'))
 const nav_top = document.querySelector('.nav-top')
