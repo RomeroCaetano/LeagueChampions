@@ -67,8 +67,6 @@
 }
 .Items_Situacionais img,.Items_Recomended img,.Items_Defensivo img, .Items_Essenciais img,.Items_Ofensivos img{
     padding:10px;
-    margin-left:10px;
-    margin-top:10px;
 }
 @media (min-width:700px){
     .Individual_Champion{
