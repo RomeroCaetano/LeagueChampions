@@ -7,7 +7,7 @@ import 'lightbox2/dist/css/lightbox.min.css'
 import 'lightbox2/dist/js/lightbox'
 import '../css/main.css'
 import '../css/champion.css'
-import {Cria_Index, Champions_Res, inputs_checked, Filtro_Letras, Champion_Filter,Cria_Champion} from './functions.mjs'
+import {Cria_Index, Champions_Res, inputs_checked, Filtro_Letras, Champion_Filter,Cria_Champion,All_None,All_Is_None} from './functions.mjs'
 const choose = document.querySelector(".choose_champ")
 const inputs_tags = Array.from(document.querySelectorAll('input[name=tags]'))
 const nav_top = document.querySelector('.nav-top')
@@ -50,7 +50,19 @@ nav_top.addEventListener('click', function(event){
 
 // Formulario de busca no index
 choose.addEventListener('keyup',function(event){
-    Champion_Filter(choose.value.toLowerCase())
+    const regex = /[A-Za-z\.\s']/g
+    if (regex.test(choose.value) | choose.value == ''){
+        const invalid = document.querySelector('.Invalid')
+        invalid.style.display = 'none'
+        Champion_Filter(choose.value.toLowerCase())
+        if(All_Is_None()){
+            invalid.style.display = 'flex'
+        }
+    }
+    else{
+        All_None()
+        document.querySelector('.Invalid').style.display = 'flex'
+    }
 })
 
 //

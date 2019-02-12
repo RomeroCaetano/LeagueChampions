@@ -157,38 +157,53 @@ function InserItems(json_Items){
     let items_add
     items_add = items_SR.filter(i=>i["type"] == "starting")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "essential")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "offensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "defensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add =items_SR.filter(i=>i["type"] == "situational")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "standard")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "protective")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "agressive")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-placement="left" data-html='true' title="${json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip(); 
       });
 }
-export {Cria_Index, Champions_Res, inputs_checked, Filtro_Letras, Champion_Filter,Cria_Champion}
+function All_None(){
+    const ArrayChamps = Array.from(document.querySelectorAll('.champion'))
+    ArrayChamps.map(i=>i.style.display = 'none')
+}
+function All_Is_None(){
+    const ArrayChamps = Array.from(document.querySelectorAll('.champion'))
+    let cont = 0
+    ArrayChamps.map(i=>(i.style.display == 'none')? cont = cont : cont++)
+    if (cont==0){
+        return true
+    }
+    else{
+        return false
+    }
+}
+export {Cria_Index, Champions_Res, inputs_checked, Filtro_Letras, Champion_Filter,Cria_Champion,All_None,All_Is_None}
