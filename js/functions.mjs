@@ -42,7 +42,6 @@ function Champions_Res(json){
 }
 
 function inputs_checked(checkeds){
-    checkeds_test = checkeds
     AllChampions.map(i=>{ 
         if(checkeds.length == 2){
             if((checkeds.includes(i.dataset.tags.split('.')[0])) && (checkeds.includes(i.dataset.tags.split('.')[1]))){
