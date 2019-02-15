@@ -108,6 +108,15 @@ textarea, input, select {
 .Champion-Name{
     margin-left:5%;
 }
+.todo-footer{
+    height:100px;
+    width:100%;
+    display: flex;
+    align-items: center;
+    background-color:black;
+    color:white;
+    justify-content: center;
+}
 @media (min-width:640px){
     .input-filtros{
         display: flex;
