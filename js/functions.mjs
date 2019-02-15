@@ -64,7 +64,8 @@ function inputs_checked(checkeds,div){
 
 function Filtro_Letras(letras_Test,AllString){
     let new_String = AllString.slice(0,letras_Test.length)
-    if (letras_Test == new_String){
+    let new_regex = RegExp(letras_Test)
+    if (new_String.match(new_regex)){
         return true
     }
 }
