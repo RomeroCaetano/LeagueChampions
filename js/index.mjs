@@ -22,9 +22,19 @@ fetch('https://ddragon.leagueoflegends.com/api/versions.json')
 //Filtro tags
 inputs_tags.map(i=>
     i.addEventListener('click',function(event){
-        inputs_checked(inputs_tags
-            .map(i=>(i.checked)? i.id : null)
-            .filter(i=>i!=null))
+        const regex = /[A-Za-z\.\s']/g
+        if (regex.test(choose.value) | choose.value == ''){
+            const invalid = document.querySelector('.Invalid')
+            invalid.style.display = 'none'
+            Champion_Filter(choose.value.toLowerCase())
+            if(All_Is_None()){
+                invalid.style.display = 'flex'
+            }
+        }
+        else{
+            All_None()
+            document.querySelector('.Invalid').style.display = 'flex'
+        }
     }))
 
 //
@@ -67,4 +77,4 @@ choose.addEventListener('keyup',function(event){
 
 //
 // Champions
-export {version}
+export {version,inputs_tags}

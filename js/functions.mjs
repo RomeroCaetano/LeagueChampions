@@ -1,4 +1,4 @@
-import{version} from './index.mjs'
+import{version,inputs_tags} from './index.mjs'
 const champions = document.querySelector(".champions")
 const main = document.querySelector(".todo-main")
 const inputs_range = Array.from(document.querySelectorAll('input[name=range]'))
@@ -41,30 +41,26 @@ function Champions_Res(json){
     .then(json => Cria_Index(json))
 }
 
-function inputs_checked(checkeds){
-    AllChampions.map(i=>{ 
+function inputs_checked(checkeds,div){ 
         if(checkeds.length == 2){
-            if((checkeds.includes(i.dataset.tags.split('.')[0])) && (checkeds.includes(i.dataset.tags.split('.')[1]))){
-            i.style.display = 'flex'
+            if((checkeds.includes(div.dataset.tags.split('.')[0])) && (checkeds.includes(div.dataset.tags.split('.')[1]))){
+            return true
             }else{
-                i.style.display = 'none'
+                return false
             }
             
         }else if(checkeds.length==1){
-            if((checkeds.includes(i.dataset.tags.split('.')[0])) || (checkeds.includes(i.dataset.tags.split('.')[1]))){
-                i.style.display = 'flex'
+            if((checkeds.includes(div.dataset.tags.split('.')[0])) || (checkeds.includes(div.dataset.tags.split('.')[1]))){
+                return true
                 }else{
-                    i.style.display = 'none'
+                    return false
                 }
         }else if(checkeds.length >= 3){
-            i.style.display = 'none'
+           return false
         }else{
-            i.style.display = 'flex'
+            return true
         }
     }
-    )
-    
-}
 
 function Filtro_Letras(letras_Test,AllString){
     let new_String = AllString.slice(0,letras_Test.length)
@@ -75,7 +71,7 @@ function Filtro_Letras(letras_Test,AllString){
 
 function Champion_Filter(letra){
     AllChampions.forEach(i =>{
-        if (Filtro_Letras(letra,i.dataset.name.toLowerCase())){
+        if (Filtro_Letras(letra,i.dataset.name.toLowerCase()) & inputs_checked(inputs_tags.map(i=>(i.checked)? i.id : null).filter(i=>i!=null),i)){
             i.style.display = 'flex'
         }else{
             i.style.display = 'none'
