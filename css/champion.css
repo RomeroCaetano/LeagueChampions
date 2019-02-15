@@ -68,6 +68,7 @@
 .ITEMS{
     display:flex;
     flex-direction: column;
+    justify-content: center;
 }
 @media (min-width:600px){
     .ITEMS{
