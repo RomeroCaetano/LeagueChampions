@@ -79,6 +79,12 @@
 .Items_Situacionais img, .Items_Essenciais img, .Items_Recomended img,.Items_Situacionais_JG img, .Items_Inicio img,.Items_Inicio_JG img,.Items_Essenciais_JG img, .Items_Recomended_JG img{
     padding:10px;
 }
+.border-right_eu{
+    border-right:1px solid black; 
+}
+.border-left_eu{
+    border-left:1px solid black;
+}
 @media (min-width:700px){
     .Individual_Champion{
         padding:10px;

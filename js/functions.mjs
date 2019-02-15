@@ -197,6 +197,8 @@ function InserItems(json_Items){
         items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "startingjungle")[0]
+    document.querySelector(".Recommended_Builds").setAttribute('class',"Recommended_Builds border-right_eu")
+    document.querySelector(".Recommended_Builds").style.padding = '10px'
     if(items_add != null){
         const div_jg = `
         <div class="Recommended_Builds_JG">
@@ -211,6 +213,8 @@ function InserItems(json_Items){
         <div class="Items_Situacionais_JG"></div>`
         const div_geral = document.querySelector('.ITEMS')
         div_geral.insertAdjacentHTML('beforeend',div_jg)
+        document.querySelector(".Recommended_Builds_JG").setAttribute('class',"Recommended_Builds_JG border-left_eu")
+        document.querySelector(".Recommended_Builds_JG").style.padding = '10px'
         const Recomendado_Inicial_JG = document.querySelector('.Items_Recomended_JG')
         const Recomendado_Inicio_JG = document.querySelector(".Items_Inicio_JG")
         const Recomendado_Essencial_JG = document.querySelector('.Items_Essenciais_JG')
