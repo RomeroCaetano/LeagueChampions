@@ -162,39 +162,39 @@ function InserItems(json_Items){
     let items_add
     items_add = items_SR.filter(i=>i["type"] == "starting")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Inicial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "essential")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "early" & i["showIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Inicio.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Inicio.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "offensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "defensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add =items_SR.filter(i=>i["type"] == "situational")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "standard")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "protective")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "agressive")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "startingjungle")[0]
     if(items_add != null){
@@ -215,42 +215,42 @@ function InserItems(json_Items){
         const Recomendado_Inicio_JG = document.querySelector(".Items_Inicio_JG")
         const Recomendado_Essencial_JG = document.querySelector('.Items_Essenciais_JG')
         const Recomendado_Situacionais_JG = document.querySelector('.Items_Situacionais_JG')
-        items_add["items"].forEach(i=> Recomendado_Inicial_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Inicial_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
         items_add = items_SR.filter(i=>i["type"] == "essentialjungle" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Essencial_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Essencial_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "earlyjungle" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Inicio_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Inicio_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "offensive" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "aggressive" & (i["showIfSummonerSpell"] == "SummonerSmite" | (i["showIfSummonerSpell"] == "" & i["hideIfSummonerSpell"] == "")))[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "defensive" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add =items_SR.filter(i=>i["type"] == "situational" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "standard " & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "protective" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "agressive" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
     if(items_add != null){
-        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add["items"].forEach((i,j)=> (i["id"] == "3007" | i["id"] =="3008" | i["id"] == "3029" | i["id"] =="3073")? '':Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     }
     $(document).ready(function(){
