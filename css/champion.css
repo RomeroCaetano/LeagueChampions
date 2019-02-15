@@ -65,7 +65,16 @@
     justify-content: center;
     text-align: center;
 }
-.Items_Situacionais img,.Items_Recomended img,.Items_Defensivo img, .Items_Essenciais img,.Items_Ofensivos img{
+.ITEMS{
+    display:flex;
+    flex-direction: column;
+}
+@media (min-width:600px){
+    .ITEMS{
+        flex-direction: row;
+    }
+}
+.Items_Situacionais img, .Items_Essenciais img, .Items_Recomended img,.Items_Situacionais_JG img, .Items_Inicio img,.Items_Inicio_JG img,.Items_Essenciais_JG img, .Items_Recomended_JG img{
     padding:10px;
 }
 @media (min-width:700px){

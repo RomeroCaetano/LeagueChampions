@@ -87,7 +87,6 @@ function Cria_Champion(json,id){
     const Array_Habilities = json["data"][id]["spells"].map(i=>i["image"]["full"])
     main.setAttribute('style','padding:20px;display:flex;justify-content:center')
     items_SR = json["data"][id]["recommended"].filter(i=>i["mode"]=="CLASSIC" & i["map"] == "SR")[0]["blocks"]
-    console.log(items_SR)
     main.innerHTML = `
     <div class="Individual_Champion">
         <div class= "Img-Skill-Lore" >
@@ -127,15 +126,18 @@ function Cria_Champion(json,id){
             <div class="Enemy_Tips"><h3>Jogando Contra</h3><span>${json["data"][id]["enemytips"]}</span></div>
             </div>
             <br>
+            <div class="ITEMS">
             <div class="Recommended_Builds">
             <h2>Items Recomendados</h2>
             <h4>Items Iniciais</h4>
             <div class="Items_Recomended"></div>
+            <h4>Inicio de Jogo</h4>
+            <div class="Items_Inicio"></div>
             <h4>Items Essênciais</h4>
             <div class="Items_Essenciais"></div>
             <h4>Items Situacionais</h4>
             <div class="Items_Situacionais"></div>
-        </div>
+        </div></div>
     </div>
         `
     const skins = document.querySelector('.Skins')
@@ -152,6 +154,7 @@ function Cria_Champion(json,id){
 };
 function InserItems(json_Items){
     const Recomendado_Inicial = document.querySelector(".Items_Recomended")
+    const Recomendado_Inicio = document.querySelector(".Items_Inicio")
     const Recomendado_Essencial = document.querySelector(".Items_Essenciais")
     const Recomendado_Situacionais = document.querySelector(".Items_Situacionais")
     let items_add
@@ -162,6 +165,10 @@ function InserItems(json_Items){
     items_add = items_SR.filter(i=>i["type"] == "essential")[0]
     if(items_add != null){
         items_add["items"].forEach(i=> Recomendado_Essencial.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "early" & i["showIfSummonerSpell"] != "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Inicio.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
     }
     items_add = items_SR.filter(i=>i["type"] == "offensive" & i["hideIfSummonerSpell"] != "SummonerSmite")[0]
     if(items_add != null){
@@ -186,6 +193,63 @@ function InserItems(json_Items){
     items_add = items_SR.filter(i=>i["type"] == "agressive")[0]
     if(items_add != null){
         items_add["items"].forEach(i=> Recomendado_Situacionais.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "startingjungle")[0]
+    if(items_add != null){
+        const div_jg = `
+        <div class="Recommended_Builds_JG">
+        <h2>Items Recomendados (Jungle)</h2>
+        <h4>Items Iniciais (Jungle)</h4>
+        <div class="Items_Recomended_JG"></div>
+        <h4>Inicio de Jogo (Jungle)</h4>
+        <div class="Items_Inicio_JG"></div>
+        <h4>Items Essênciais (Jungle)</h4>
+        <div class="Items_Essenciais_JG"></div>
+        <h4>Items Situacionais (Jungle)</h4>
+        <div class="Items_Situacionais_JG"></div>`
+        const div_geral = document.querySelector('.ITEMS')
+        div_geral.insertAdjacentHTML('beforeend',div_jg)
+        const Recomendado_Inicial_JG = document.querySelector('.Items_Recomended_JG')
+        const Recomendado_Inicio_JG = document.querySelector(".Items_Inicio_JG")
+        const Recomendado_Essencial_JG = document.querySelector('.Items_Essenciais_JG')
+        const Recomendado_Situacionais_JG = document.querySelector('.Items_Situacionais_JG')
+        items_add["items"].forEach(i=> Recomendado_Inicial_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+        items_add = items_SR.filter(i=>i["type"] == "essentialjungle" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Essencial_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "earlyjungle" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Inicio_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "offensive" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "aggressive" & (i["showIfSummonerSpell"] == "SummonerSmite" | (i["showIfSummonerSpell"] == "" & i["hideIfSummonerSpell"] == "")))[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "defensive" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add =items_SR.filter(i=>i["type"] == "situational" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "standard " & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "protective" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
+    items_add = items_SR.filter(i=>i["type"] == "agressive" & i["showIfSummonerSpell"] == "SummonerSmite")[0]
+    if(items_add != null){
+        items_add["items"].forEach(i=> Recomendado_Situacionais_JG.insertAdjacentHTML("beforeend",`<img src="https://ddragon.leagueoflegends.com/cdn/${version}/img/item/${i["id"]}.png" data-toggle='tooltip' data-html='true' title="${(json_Items["data"][i["id"]]["description"].length > 500)?json_Items["data"][i["id"]]["plaintext"] :json_Items["data"][i["id"]]["description"]}">`))
+    }
     }
     $(document).ready(function(){
         $('[data-toggle="tooltip"]').tooltip(); 
