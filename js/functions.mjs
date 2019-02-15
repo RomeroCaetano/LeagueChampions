@@ -81,6 +81,11 @@ function Champion_Filter(letra){
 }
 
 function Cria_Champion(json,id){
+    window.scrollTo({
+        behavior:'auto',
+        top: 0,
+        left: 0
+      })
     const Array_Habilities = json["data"][id]["spells"].map(i=>i["image"]["full"])
     main.setAttribute('style','padding:20px;display:flex;justify-content:center')
     items_SR = json["data"][id]["recommended"].filter(i=>i["mode"]=="CLASSIC" & i["map"] == "SR")[0]["blocks"]
