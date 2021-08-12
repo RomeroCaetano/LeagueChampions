@@ -88,7 +88,7 @@ function Cria_Champion(json,id){
       })
     const Array_Habilities = json["data"][id]["spells"].map(i=>i["image"]["full"])
     main.setAttribute('style','padding:20px;display:flex;justify-content:center')
-    items_SR = json["data"][id]["recommended"].filter(i=>i["mode"]=="CLASSIC" & i["map"] == "SR")[0]["blocks"]
+    // items_SR = json["data"][id]["recommended"].filter(i=>i["mode"]=="CLASSIC" & i["map"] == "SR")[0]["blocks"]
     main.innerHTML = `
     <div class="Individual_Champion">
         <div class= "Img-Skill-Lore" >
